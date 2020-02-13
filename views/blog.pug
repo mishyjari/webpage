@@ -1,5 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.blog-container
+    div.blog-head
+      h2 blogging, writing, sharing, etc
+        p put some kind of header info here, maybe auth / search links
+    div.blog-body
+      h3 These will be blog enties
+        h4 Feb 13, 2020
+          p We will need to set up mongoose to run this blog. Pug can handle displaying the content effeciently. We will have to figure out user auth so I can log in and post / edit. While that is being worked out, I will use a text document or json file with some manually entered content that pug can iterate over. It would be nice if it has an efficent way of handing images and other content. This will be a combination of display and fancy getters.
+      h3 What was that?
+        h4 Feb 13, 2020
+          p Lorem ipsum dolor sit amet, te nam eros albucius mediocritatem, has ea posse repudiare quaerendum. Eos ei porro instructior. Persius labores pro id, mei et oratio lucilius voluptaria, no everti deseruisse vis. Dico debet vocent ea sea. Te eum accusam accusamus. Quo id prompta admodum philosophia, ex oporteat elaboraret eum.
+      h3 You don't say?
+        h4 Feb 13, 2020
+          p Te mea sumo eligendi praesent, cu sit ferri voluptatum, ridens eloquentiam usu in. Diam facilis argumentum no has. Ea pro tritani persius ceteros, eos feugait deleniti adversarium te. Justo decore ponderum an quo, eos te stet dicant.
+    div.blog-index

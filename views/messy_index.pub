@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  div.greeting-container
+    p#greeting Welcome to mishyjari.com, the webspace of Michelle Frattaroli!
+  div.links-container
+    ul
+      li
+        a(href='#') I am a link!
+      li
+        a(href='#') So am I!!
+      li
+        a(href='#') Being a link is fun!
+      li
+        a(href='#') My spoon is too big :(
+  div.media-container
+    h4 Media Container
+      p This could be links to projects, photos, writings, or something professionalish
+  div.blog-container
+    h4 Blog Posts
+      ul
+        li I like to meow because I'm a blog post!
+        li Yeah, well I like to meow because I'm a kitten!
+        li I just meow because I'm a mishy, ya silly geese.
+        li meow.
+  div.media-feed-container
+    h4 Socia media stuff
+      p Instagram, maybe FB, Twitter if I ever wind up on that bandwagon, idk
+  div.miri-container
+    h4 This is where I lock the Miri up
+      p she won't mind 

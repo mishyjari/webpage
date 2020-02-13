@@ -5,6 +5,11 @@ body {
 	background-color: #ebe9ff;
 }
 
+li {
+	font-style: "aerial";
+	font-size: 12px;
+}
+
 .header {
 	margin-left: auto;
 	margin-right: auto;
@@ -97,95 +102,39 @@ p {
 	font-family: "arial";
 }
 
-li {
-	font-weight: normal;
-	font-size: 12px;
+.main-content {
+	display: grid;
+	grid-template-columns: 30% 40% auto;
+	grid-gap: 10px;
 }
 
-.text-left {
-	width: 45%;
-	padding: 5px;
-	margin-right: auto;
+.main-content div {;
+	background: #FFF0FF;
+	padding: 10px;
+	border: 1px solid #b18ab2;;
+	border-radius: 10px 30px;
+	box-shadow: 1px 2px #630080;
 }
 
-.text-right {
-	width: 45%;
-	padding: 5px;
-	margin-left: auto;
+.content1 {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row: 1;
 }
 
-.greeting-container {
-	margin: 2px;
-	padding: 5px;
-	margin-right: auto;
-	margin-bottom: auto;
-	width: 65%;
-	border: 1px solid #ffddf8;
-	clear: top bottom;
-	float: left;
+.content2 {
+	grid-column: 1;
+	grid-row-start: 2;
+	grid-row-end: 3;
 }
 
-.links-container {
-	margin: 2px;
-	padding: 5px;
-	margin-right: auto;
-	margin-top: auto;
-	margin-bottom: auto;
-	position: relative;
-	width: 30%;
-	border: 1px solid #ffddf8;
-	height: auto;
-	clear: left;
-	float: left;
-	display: block;
+.content3 {
+	grid-column: 2;
+	grid-row: 2 / 3;
 }
 
-.media-container {
-        margin: 2px;
-        padding: 5px;
-        margin: auto;
-        position: relative;
-        width: 30%;
-        border: 1px solid #ffddf8;
-        height: auto;
-	float: inherit;
-	display: block;
-}
-
-.blog-container {
-	float: left;
-	margin: 2px;
-        padding: 5px;
-	margin-left: auto;
-        margin-right: auto;
-        margin-top: auto;
-        margin-bottom: auto;
-        width: 50%;
-        border: 1px solid #ffddf8;
-        height: auto;
-	position:: bottom;
-}
-
-.media-feed-container {
-        margin: 2px;
-        padding: 5px;
-        margin-left: auto;
-        margin-bottom: auto;
-        width: 30%;
-        border: 1px solid #ffddf8;
-        height: auto;
-	float: right;;
-}
-
-.miri-container {
-        margin: 2px;
-        padding: 5px;
-        margin-right: auto;
-        margin-top: auto;
-        margin-bottom: auto;
-        width: 30%;
-        border: 1px solid #ffddf8;
-	position: relative;
-	float: inherit;
+.content4 {
+	grid-column: 3;
+	grid-row: 1 / 4;
 }
 

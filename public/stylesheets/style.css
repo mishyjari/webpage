@@ -8,6 +8,11 @@ body {
 li {
 	font-style: "aerial";
 	font-size: 12px;
+        color: #4d0026;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+        color: #4d0026;
 }
 
 .header {
@@ -24,6 +29,7 @@ h1#logo {
 	color: #4d0026;
 	margin-bottom: 5px;
 	margin-top: 0px;
+	text-shadow: 1px 1px #000;
 }
 
 .navbar {
@@ -101,7 +107,11 @@ h1#logo {
 
 /* INDEX STYLES */
 
-h2#home_heading {
+h4#support {
+	text-align: center;
+}
+
+h3#welcome {
 	text-align: center;
 	font-family: "arial";
 	color: #4d0026;

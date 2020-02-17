@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  div.contact-container
+    h3= title
+
+    form(method='POST' action='')
+      div.form-group
+        label(for='title') Title: 
+        br
+        input#title.form-control(type='text', name='title')
+        br
+        br
+        label(for='content') Content:
+        br
+        textarea#content.form-control(cols='80', rows='10', name='content')
+        br
+      button.btn.btn-primary(type='submit') Submit

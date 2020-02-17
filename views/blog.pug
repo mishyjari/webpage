@@ -8,5 +8,8 @@ block content
       a(href="/blog/new") New Post
     div.blog-body
       each entry in all_posts
-        h4 #{entry.title}
-        #{entry.content}
+        div.post-preview
+          h4 
+            a(href=entry.url) #{entry.title} 
+          h5 #{entry.date}
+          p #{entry.content}

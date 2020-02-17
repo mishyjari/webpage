@@ -11,4 +11,7 @@ router.get('/new', blog_ctrl.new_post_get);
 /* Handle POST for new blog post */
 router.post('/new', blog_ctrl.new_post_post);
 
+/* GET fot post details */
+router.get('/posts/:id', blog_ctrl.post_detail);
+
 module.exports = router;

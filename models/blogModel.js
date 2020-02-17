@@ -9,6 +9,6 @@ const BlogPostSchema = new Schema({
 
 BlogPostSchema
 	.virtual('url')
-	.get(function() { return '/blog/' + this.id; });
+	.get(function() { return '/blog/posts/' + this.id; });
 
 module.exports = mongoose.model('BlogPost', BlogPostSchema);

@@ -1,0 +1,12 @@
+extends layout
+block content
+
+  h4 Delete Post
+
+  h5= title
+  p= content
+
+  form(method='POST' action='')
+    div.form-group
+      input#id.form-control(type='hidden', name='id', required='true' value=id)
+    button.btn.btn-primary(type='submit') Delete Post

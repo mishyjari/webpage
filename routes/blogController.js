@@ -37,6 +37,66 @@ exports.post_detail = function(req,res,next) {
 		},
 	}, function(err,results) {
 		if (err) { return next(err); }
-		res.render('view-post', { title: results.entry.title, content: results.entry.content, date: results.entry.date })
+		res.render('view-post', { 
+			id: results.entry.id, 
+			title: results.entry.title,
+			content: results.entry.content, 
+			date: results.entry.date })
 	});
 }
+
+// GET Edit Post form
+exports.edit_post_get = function(req,res,next) {
+	async.parallel({
+		entry: function(cb) {
+			BlogPost.findById(req.params.id)
+			.exec(cb)
+		},
+	}, function(err,results) {
+		if (err) { return next(err); }
+		res.render('edit-post', { 
+                        id: results.entry.id, 
+                        title: results.entry.title, 
+                        content: results.entry.content, 
+                        date: results.entry.date 
+		});
+	});	
+};
+
+// POST Edit Post
+exports.edit_post_post = function(req,res,next) {
+	res.send('Edit Post POST')
+};
+
+// Delete Post GET
+exports.delete_post_get = function(req,res,next) {
+        async.parallel({
+                entry: function(cb) {
+                        BlogPost.findById(req.params.id)
+                        .exec(cb)
+                },
+        }, function(err,results) {
+                if (err) { return next(err); }
+                res.render('delete-post', {
+                        id: results.entry.id,
+                        title: results.entry.title,
+                        content: results.entry.content,
+                        date: results.entry.date 
+                });
+        });
+};
+
+// Delete Post POST
+exports.delete_post_post = function(req,res,next) {
+	async.parallel({
+		entry: function(cb) {
+			BlogPost.findById(req.body.id).exec(cb)
+		},
+	}, function(err,resuts) {
+		if (err) { return next(err); }
+		BlogPost.findByIdAndRemove(req.body.id, function deleteBlogPost(err) {
+			if (err) { return next(err); }
+			res.redirect('/blog');
+		})
+	});
+};

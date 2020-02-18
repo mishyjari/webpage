@@ -5,11 +5,22 @@ block content
     div.blog-head
       h2 blogging, writing, sharing, etc
         p put some kind of header info here, maybe auth / search links
-      a(href="/blog/new") New Post
     div.blog-body
+      - all_posts.sort(function(a,b) {let dateA = a.date.getTime(); let dateB = b.date.getTime(); return (dateA > dateB) ? -1 : ( dateA < dateB) ? 1 : 0;});
       each entry in all_posts
-        div.post-preview
-          h4 
+        div#post-preview
+          h5#post-title 
             a(href=entry.url) #{entry.title} 
-          h5 #{entry.date}
-          p #{entry.content}
+          div#post-content
+            p #{entry.content}
+          h6#date #{entry.date.toDateString()} at #{entry.date.getHours()}:#{entry.date.getMinutes()}
+    div.blog-index
+      div#new-post-index
+        h5#new-post
+          a(href='/blog/new') New Post
+      - all_posts.sort(function(a,b) {let dateA = a.date.getTime(); let dateB = b.date.getTime(); return (dateA > dateB) ? -1 : ( dateA < dateB) ? 1 : 0;});
+      ul
+      each entry in all_posts
+        li#index-item         
+          a(href=entry.url) #{entry.title}
+

@@ -3,6 +3,7 @@ extends layout
 block content
 
   div.post-container
-    p= title
+    h4= title
     p= content
     p= date
+    a(href='/blog/posts/' + id + '/edit') Edit Post

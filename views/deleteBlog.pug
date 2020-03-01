@@ -1,0 +1,12 @@
+extends layout
+block content
+  div.deletePostConfirm
+    h3 Really Delete This Post?
+    h4 This cannot be undone.
+    h5= post.title
+    p= post.content
+    form(method='POST' action='')
+      div.form-group
+        input#id.form-control(type='hidden' name='id' value=post.id)
+      button.btn.btn-primary(type='submit') DELETE
+    

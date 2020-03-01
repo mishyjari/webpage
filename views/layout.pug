@@ -19,7 +19,17 @@ html(lang='en')
       a#contact(href='/contact') Contact
    
     div(class='content')    
+      if memo
+        h6= memo
       block content
 
     div(class='footer')
       h5 mishyjari.com by Michelle Frattaroli
+      h5 
+        if session
+          |Logged in as #{session.username}. 
+          a(href='/logout') Logout?
+        else
+          a(href='/users/login') Login
+      h5
+        a(href='/users/new') Register

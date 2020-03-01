@@ -1,8 +1,13 @@
 extends layout
 
 block content
-
   div.post-container
-    p= title
-    p= content
-    p= date
+    h5#postTitle= post.title
+    h6#postDate Created at #{post.date.getHours()}:#{post.date.getMinutes()+1} on #{post.date.toDateString()}
+    if post.edited
+      h6#postDate Edited at #{post.date.getHours()}:#{post.date.getMinutes()+1} on #{post.date.toDateString()}
+    p#postAuthor Posted By #{post.author}
+    div.postBody
+      p= post.content
+    h6
+      a(href='/blog/posts/'+post.id+'/edit') Edit Post

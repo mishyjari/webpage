@@ -1,0 +1,26 @@
+extends layout
+block content 
+  div.register
+    h4 New User Registration
+    form(method='POST' action='')
+      div.form-group
+        label(for='firstname') First Name:
+        input#firstname.form-control(type='text', name='firstname', required)
+        br
+        label(for='lastname') Last Name:
+        input#lastname.form-control(type='text', name='lastname', required)
+        br
+        label(for='email') Email:
+        input#email.form-control(type='text', name='email', required)
+        br
+        label(for='username') Username:
+        input#username.form-control(type='text', name='username', required)
+        br
+        label(for='password') Password:
+        input#password.form-control(type='password', name='password', required)
+        br
+        label(for='confirmPassword') Confirm Password:
+        input#confirmPassword.form-control(type='password', name='confirmPassword', required)
+        br
+      button.btn.btn-primary(type='submit') Submit
+

@@ -1,0 +1,8 @@
+extends layout
+block content
+  if(message)
+    h4 #{message}
+  form(action="" method="POST")
+    input(name="username" type="text" required placeholder="Username")
+    input(name="password" type="password" required placehlder="Password")
+    button(type="Submit") Submit

@@ -4,7 +4,9 @@ const Schema = mongoose.Schema;
 const BlogPostSchema = new Schema({
 	title: {type: String, required: [true, 'Title required']},
 	content: {type: String, required: [true, 'Content required']},
-	date: {type: Date, default: Date.now() }
+	date: {type: Date, default: Date.now() },
+	edited: {type: Date},
+	author: {type: String, required: [true, 'Must be signed in to post']}
 });
 
 BlogPostSchema

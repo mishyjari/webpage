@@ -3,13 +3,16 @@ extends layout
 block content
   div.blog-container
     div.blog-head
-      h2 blogging, writing, sharing, etc
-        p put some kind of header info here, maybe auth / search links
-      a(href="/blog/new") New Post
+      h3 mishyJari blog
+        p Rantings and musings, I suppose
+      if session.loggedin
+        a(href="/blog/new") New Post
+      else
+        a(href='/users/login') Login to Add Post
     div.blog-body
       each entry in all_posts
         div.post-preview
-          h4 
+          h5 
             a(href=entry.url) #{entry.title} 
-          h5 #{entry.date}
-          p #{entry.content}
+          div.post-preview-body= entry.content
+          h6 Posted at #{entry.date.getHours()}:#{entry.date.getMinutes()+1} on #{entry.date.toDateString()}.

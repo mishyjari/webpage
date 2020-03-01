@@ -1,0 +1,17 @@
+extends layout
+block content
+  div.editPostForm
+    h4 Edit Post
+    h6 
+      a(href='/blog/posts/'+post.id+'/delete') Delete Post?
+    form(method='POST' action='')
+      div.form-group
+        label(for='title') Title:
+        br
+        input#title.form-control(type='text' name='title' value=post.title required)
+        br
+        label(for='content') Content:
+        br
+        input#content.form-control(type='text' name='content' value=post.content required)
+        br
+      button.btn.btn-primary(type='submit') Edit Post

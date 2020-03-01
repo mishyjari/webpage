@@ -1,24 +1,34 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const bodyParser = require('body-parser');
+const session = require ('express-session');
 
 // Require router files
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var blogRouter = require('./routes/blog');
-var codeRouter = require('./routes/code');
-var contactRouter = require('./routes/contact');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const blogRouter = require('./routes/blog');
+const codeRouter = require('./routes/code');
+const contactRouter = require('./routes/contact');
 
 // Mongoose Database setup
-var mongoose = require('mongoose');
-var mongoDB = 'mongodb://127.0.0.1/mishyjair';
+const mongoose = require('mongoose');
+const mongoDB = 'mongodb://127.0.0.1/mishyjair';
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
-var db = mongoose.connection;
+const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error: '));
 
-var app = express();
+const app = express();
+
+// Sessions Config
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUnitialized: false,
+}));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
